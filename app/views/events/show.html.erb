@@ -1,0 +1,50 @@
+<title>IOU Details</title>
+
+
+
+
+
+  <div class="fixed">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+      <h1><a href="#">IOU</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+   <ul class="right">
+      <li><%= link_to("Dashboard","/users/#{current_user.id}")%></li>
+      <li class="divider"></li>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+
+<H1 class="title animated bounceIn">IOU Details</H1>
+<% if flash[:created] %>
+<div class="white"> <%= flash[:created] %> </div>
+<% end %>
+<div class="mid">
+    <ul id="myList" class="white bf">
+      <li>Name : <%= @event.name%></li>
+      <li>Date : <%= @event.pay_date%></li>
+      <li>Friend : <%= @event.friend%></li>
+      <li>Amount : <%= @event.amount%></li>
+      <li>Status : <%= @event.status%></li>
+    </ul>
+  <%=link_to("Mark IOU as Paid", events_paid_path(:event_id => @event.id), :method => "post", class: "button radius") %>
+
+  <%=link_to("Remind Me", events_paid_path(:event_id => @event.id), :method => "post", class: "button radius") %>
+
+<br />
+
+
+</div>
+
+
+
+

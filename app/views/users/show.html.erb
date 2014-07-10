@@ -1,0 +1,44 @@
+  <div class="fixed">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+      <h1><a href="#">IOU</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+   <ul class="right">
+      <li><%=link_to("Sign Out", "/users/sign_out", :method => "delete")%></li>
+      <li class="divider"></li>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="small-12 small-centered columns scooch">
+<title>Welcome</title>
+  <h1 class="title">Welcome, <%=current_user.first_name%>!</h1>
+</div>
+<div class="butts">
+  <%=link_to("Create New IOU", "/users/#{current_user.id}/events/new", class: "button success radius")%>
+  <%= link_to("Show IOU Details", "/users/#{current_user.id}/events", class: "button radius")%>
+</div>
+  <div class="notebook small-6 small-centered columns">
+
+    <div class="page">
+      <h2 class="head">IOUs</h2>
+      <br />
+    <% current_user.events.each do |event| %>
+        <li class="bullet"><%=event.name.capitalize%>: <%=event.friend%> </li>
+        <br />
+    <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+

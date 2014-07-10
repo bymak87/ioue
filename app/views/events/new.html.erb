@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Event</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/redmond/jquery-ui.css">
+
+</head>
+<body>
+    <div class="fixed">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+      <h1><a href="#">IOU</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+   <ul class="right">
+      <li><%= link_to("Dashboard","/users/#{current_user.id}")%></li>
+      <li class="divider"></li>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="small-12 columns">
+  <h1 class="title">Create New IOU</h1>
+</br>
+</br>
+</br>
+
+<div class=" small-5 columns small-centered panel">
+<%=form_tag "/users/#{current_user.id}/events", :method => "post" do %>
+<%=label_tag "Event name" %>
+<%=text_field_tag :name %>
+<%=label_tag "Date", nil, class: "date" %>
+<%=text_field_tag :pay_date %>
+<%=label_tag "Friend's Name" %>
+<%=text_field_tag :friend %>
+<%=label_tag "Amount" %>
+<%=text_field_tag :amount %>
+
+
+<%=submit_tag "Submit", class: "radius button" %>
+
+<% end %>
+</div>
+</div>
+</body>
+</html>
+

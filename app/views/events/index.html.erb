@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <link type="text/css" media="screen" rel="stylesheet" href="responsive-tables.css" />
+<script type="text/javascript" src="responsive-tables.js"></script>
+</head>
+<body>
+    <div class="fixed">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+      <h1><a href="#">IOU</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+   <ul class="right">
+      <li><%= link_to("Dashboard","/users/#{current_user.id}")%></li>
+      <li class="divider"></li>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="small-12 small-centered columns">
+<h1 class="title">All My IOUs</h1>
+<br/>
+<br/>
+<% if flash[:created] %>
+<div class="white"> <%= flash[:created] %> </div>
+<% end %>
+<br />
+<br/>
+  <div class="row">
+    <div class="small-12 small-centered columns">
+    <table class="responsive">
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Friend</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>View</th>
+        <th>Delete</th>
+      </tr>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name%></td>
+        <td><%= event.pay_date%></td>
+        <td><%= event.friend%></td>
+        <td><%= event.amount%></td>
+        <td><%= event.status%></td>
+        <td><%= link_to "View", "/users/#{current_user.id}/events/#{event.id}"%></td>
+        <td><%= link_to "Delete", "/users/#{current_user.id}/events/#{event.id}", :method => 'delete'%></td>
+      </tr>
+    <% end %>
+    </table>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

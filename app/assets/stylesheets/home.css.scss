@@ -1,0 +1,73 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-image:url(http://wp.1920x1080.org/wp-content/uploads/2011/11/background-desktop-pictures-990250602.jpg);
+
+}
+.notebook{
+  background-image:url(http://th03.deviantart.net/fs71/PRE/i/2012/206/7/a/lined_paper_10_by_purpledragon42_stock-d58ljbk.png);
+  height: 500px;
+}
+
+.title{
+  // color: #158cba;
+  color:white;
+  font-family: 'Pacifico', cursive;
+}
+.head{
+  font-family: 'Pacifico', cursive;
+}
+.white{
+  color:white;
+}
+.out{
+  color:white;
+}
+.filler{
+  margin-top: 25%;
+}
+.page{
+
+  position: relative;
+  top: 65px;
+  left: 15%;
+
+}
+.mid{
+  position:absolute;
+     width:500px;
+     height:100%;
+     top:50%;
+     left:50%;
+     margin:-100px 0 0 -150px;
+
+}
+
+.bf{
+  font-size:2em;
+}
+
+.scooch{
+  padding-left: 75px;
+}
+
+.bullet{
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1.5rem;
+}
+
+.cen{
+  position: relative;
+  left: 25%;
+}
+.butts{
+  position: relative;
+  padding-left: 25%;
+  padding-top:5%;
+}
+
+.move{
+  position: relative;
+  left: 33%;
+}
