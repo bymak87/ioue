@@ -26,7 +26,7 @@ class EventsController < ApplicationController
     :body => 'IOU Event with ... been created'
   )
     flash[:created] = "IOU successfully created"
-    redirect_to "/users/#{current_user.id}/events/#{@event.id}"
+    redirect_to root_path #{}"/users/#{current_user.id}/events/#{@event.id}"
 
   end
 
