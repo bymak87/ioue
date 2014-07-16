@@ -8,7 +8,7 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'sidekiq'
 gem 'pg'
-gem 'ruby', '2.0.0'
+gem 'ruby', '2.1.1'
 gem 'rails_12factor',     group: :production
 
 
