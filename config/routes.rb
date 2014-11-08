@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   post 'events/paid' => 'events#paid'
+  post 'events/remind' => 'events#remind'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
