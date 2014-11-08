@@ -39,6 +39,9 @@ class EventsController < ApplicationController
     @id = params[:event_id]
     @event = Event.find(@id)
 
+    @id = params[:event_id]
+    @event = Event.find(@id)
+
     # set up a client to talk to the Twilio REST API
     @client = Twilio::REST::Client.new account_sid, auth_token
 
@@ -67,7 +70,9 @@ class EventsController < ApplicationController
     #send text
     @client.account.messages.create(
     :from => from,
-    :to => "+1#{current_user.cellphone}",
+
+
+    :to => "+1#{current_user.cellphone}", #current_user.cellphone
     :body => "You have paid off your IOU with #{@event.friend}."
   )
     redirect_to "/users/#{current_user.id}/events/#{@event.id}"
