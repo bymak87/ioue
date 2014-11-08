@@ -15,18 +15,19 @@ class EventsController < ApplicationController
 
     account_sid = ENV['SID']
     auth_token = ENV['TOKEN']
+    from = ENV['FROM']
 
     # set up a client to talk to the Twilio REST API
     @client = Twilio::REST::Client.new account_sid, auth_token
 
     #send text
     @client.account.messages.create(
-    :from => '+18329812216',
-    :to => '+15124847144', #current_user.cellphone
-    :body => 'IOU Event with ... been created'
+    :from => from,
+    :to => "+1#{current_user.cellphone}",
+    :body => "You owe #{@event.friend} $#{@event.amount} for #{@event.name}."
   )
     flash[:created] = "IOU successfully created"
-    redirect_to root_path #{}"/users/#{current_user.id}/events/#{@event.id}"
+    redirect_to "/users/#{current_user.id}/events/#{@event.id}"
 
   end
 
@@ -34,18 +35,23 @@ class EventsController < ApplicationController
     account_sid = ENV['SID']
     auth_token = ENV['TOKEN']
 
+    @id = params[:event_id]
+    @event = Event.find(@id)
+
     # set up a client to talk to the Twilio REST API
     @client = Twilio::REST::Client.new account_sid, auth_token
 
     #send text
     @client.account.messages.create(
-    :from => '+18329812216',
-    :to => '+15124847144', #current_user.cellphone
-    :body => 'IOU Event with ... been created'
+    :from => from,
+    :to => "+1#{current_user.cellphone}",
+    :body => "Remember to pay #{@event.friend} $#{@event.amount}."
     )
+    redirect_to "/users/#{current_user.id}/events/#{@event.id}"
   end
 
   def paid
+
     @id = params[:event_id]
     @event = Event.find(@id)
     @event.status = "paid"
@@ -59,9 +65,9 @@ class EventsController < ApplicationController
 
     #send text
     @client.account.messages.create(
-    :from => '+18329812216',
-    :to => '+15124847144', #current_user.cellphone
-    :body => 'You have paid off your IOU with...'
+    :from => from,
+    :to => "+1#{current_user.cellphone}", #current_user.cellphone
+    :body => "You have paid off your IOU with #{@event.friend}."
   )
     redirect_to "/users/#{current_user.id}/events/#{@event.id}"
 
