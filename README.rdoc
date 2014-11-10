@@ -1,30 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Tech Stack:
 
-* Ruby version
+* Ruby on Rails
 
-* System dependencies
+* Twilio API
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 IOU-Events
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-[ ![Codeship Status for bymak87/iou](https://www.codeship.io/projects/a80bf720-e9f3-0131-5744-6281572deffc/status)](https://www.codeship.io/projects/26267)
+You can try the demo at :
+http://iou-events.herokuapp.com/
