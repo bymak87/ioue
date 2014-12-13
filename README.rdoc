@@ -16,7 +16,6 @@ Tech Stack:
 
 * Devise
 
-*
 
 IOU-Events
 
