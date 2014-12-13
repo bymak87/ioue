@@ -1,11 +1,22 @@
-== README
+== README ==
 
+This app helps remind you about IOUs you have with friends via text messages to your cell phone.
 
 Tech Stack:
 
 * Ruby on Rails
 
 * Twilio API
+
+* HTML/CSS
+
+* Animate.css
+
+* PostgreSQL
+
+* Devise
+
+*
 
 IOU-Events
 
